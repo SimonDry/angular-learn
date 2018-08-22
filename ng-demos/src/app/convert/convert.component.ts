@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./convert.component.css']
 })
 export class ConvertComponent implements OnInit {
-
+  distance=0;
+  selectedIn="m";
+  selectedOut="m";
+  converted=undefined;
   constructor() { }
   units = globalUnits;
   ngOnInit() {
@@ -14,6 +17,10 @@ export class ConvertComponent implements OnInit {
   test(){
     return globalConvert(12,'km','miles')
   }
+  calculate(d,i,o){
+    this.converted = globalConvert(d,i,o);
+  }
+
 }
 
 
