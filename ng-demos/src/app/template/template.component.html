@@ -1,0 +1,42 @@
+<p>
+  Mustaches can call functions {{ getName() }}
+</p>
+<nav [class]="impressive" [textContent]=" 'nice' " >Hello</nav>
+
+<nav [textContent]="getContent()"></nav>
+
+<ul> Users:
+  <li *ngFor="let u of users" >{{ u }}</li>
+</ul>
+
+
+<div *ngIf="condition()">
+  There is a lot of users
+</div>
+
+
+<div *ngIf="users.length > 3">
+  There is a lot of users
+</div>
+
+<div class="impressive">this is an impressive DIV</div>
+
+<div [className]="getImpressiveStyle()">this is an impressive DIV</div>
+
+<!--: is used as "if" statement-->
+<!-- ngClass is NOT a standard JS property. It's an Angular 'directive' -->
+<div [ngClass]="{banana:users.length>3}">this is a conditional DIV</div>
+
+<!--We can also declare a variable on a component-->
+<div #friend >Hello My Friend</div>
+<div>The content was : {{ friend.textContent }}</div>
+
+<input type="text" value="I am a data" #myInput>
+<div>Value is : {{ myInput.value }}</div>
+
+<!-- () are Events -->
+<button (click)="clearUsers()" >Delete people</button>
+
+
+
+
