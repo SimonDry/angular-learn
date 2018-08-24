@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {TopicsService} from "../topics.service";
+import {Component, OnInit} from '@angular/core';
+import {Topic, TopicsService} from "../topics.service";
 
 @Component({
   selector: 'app-topics',
@@ -8,11 +8,25 @@ import {TopicsService} from "../topics.service";
 })
 export class TopicsComponent implements OnInit {
 
-  constructor(public service:TopicsService) {
+  constructor(public service: TopicsService) {
     this.service.fetchTopics()
   }
+
+  extended: number=-1;
 
   ngOnInit() {
   }
 
+  extendedTopic(topic: Topic) {
+    return this.extended == topic.id
+  }
+
+  toggleExtension(topic: Topic) {
+    console.log(topic.id)
+    if (this.extended === topic.id) {
+      this.extended = -1;
+    } else {
+      this.extended = topic.id
+    }
+  }
 }

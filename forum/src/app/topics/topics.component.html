@@ -1,4 +1,14 @@
 <h3>Topic list</h3>
 <ul>
-  <li *ngFor="let t of service.allTopics" >{{t.title}}</li>
+  <li *ngFor="let t of service.allTopics">
+    <span (click)="toggleExtension(t)">{{t.title}}</span>
+    <span *ngIf="extendedTopic(t)">
+      <span *ngIf="t.content; else noContent">
+        <br>{{t.content}}
+
+      </span>
+    </span>
+  </li>
 </ul>
+
+<ng-template #noContent><br>Pas de contenu</ng-template>

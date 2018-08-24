@@ -3,8 +3,9 @@ import {HttpClient} from "@angular/common/http";
 export type User = {
   name:string,
   email:string,
-  id:string,
-  admin:boolean
+  id:number,
+  admin?:boolean,
+  statement?:string
 }
 @Injectable({
   providedIn: 'root'
