@@ -1,0 +1,34 @@
+<h3>Users</h3>
+<!--<table>-->
+<!--<thead>-->
+
+<!--<tr>-->
+<!--<th>Id</th>-->
+<!--<th>Name</th>-->
+<!--<th>Email</th>-->
+<!--<th>Admin ?</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+
+<!--<tr *ngFor="let u of service.allUsers">-->
+<!--<td>{{u.id}}</td>-->
+<!--<td>{{u.name}}</td>-->
+<!--<td>{{u.email}}</td>-->
+<!--<td *ngIf="u.admin">Yes</td>-->
+<!--</tr>-->
+
+
+<!--</tbody>-->
+<!--</table>-->
+<ul>
+  <li *ngFor="let u of service.allUsers">
+    <user [user]="u" [admin]="u.admin" [name]="u.name" (click)="logUser(u.name)"></user>
+    :
+    <span *ngIf="isLogged(u.name)">logged</span>
+  </li>
+</ul>
+<h5>Logged Users</h5>
+
+<div *ngFor="let u of service.loggedUsers"><span *ngIf="isLogged(u)">{{u}}</span></div>
+

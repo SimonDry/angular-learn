@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li (click)="users()">Users</li>
+    <li (click)="topics()">Topics</li>
+  </ul>
+</nav>
+
+<app-topics *ngIf="isTopics()"></app-topics>
+<app-users *ngIf="isUsers()"></app-users>
+

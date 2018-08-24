@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';f
 import {CryptoService} from "../crypto.service";
 
 @Component({
