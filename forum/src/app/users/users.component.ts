@@ -13,10 +13,10 @@ export class UsersComponent implements OnInit {
   }
 
   logUser(user){
-    this.service.loggedUsers.push(user.toString())
+    this.service.loggedUsers.push(user)
   }
   isLogged(user){
-    return this.service.loggedUsers.includes(user.toString())
+    return this.service.loggedUsers.includes(user)
   }
   ngOnInit() {
   }

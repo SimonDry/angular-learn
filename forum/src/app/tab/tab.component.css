@@ -1,0 +1,13 @@
+div {
+  /*padding: 20px;*/
+  width: 100%;
+  display: flex;
+  /*justify-content: space-around;*/
+}
+span{
+  text-align: center;
+  border:1px solid #000;
+  padding: 20px;
+  width: 30%;
+  /*margin: 30px;*/
+}

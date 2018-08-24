@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 export type Topic = {
   id:number,
-  title:string
+  title:string,
+  content:string
 }
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class TopicsService {
 function mapAnyToTopics(topic:any):Topic{
   return {
     id: topic.id,
-    title: topic.title
+    title: topic.title,
+    content: topic.content
   }
 }

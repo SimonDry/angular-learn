@@ -24,8 +24,8 @@
 <ul>
   <li *ngFor="let u of service.allUsers">
     <user [user]="u" [admin]="u.admin" [name]="u.name" (click)="logUser(u.name)"></user>
-    :
-    <span *ngIf="isLogged(u.name)">logged</span>
+    <!--:-->
+    <!--<span *ngIf="isLogged(u.name)">logged</span>-->
   </li>
 </ul>
 <h5>Logged Users</h5>
