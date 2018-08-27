@@ -7,6 +7,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { UserComponent } from './user/user.component';
 import { TopicsComponent } from './topics/topics.component';
 import { TabComponent } from './tab/tab.component';
+import { FormComponent } from './form/form.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,10 +16,11 @@ import { TabComponent } from './tab/tab.component';
     UsersComponent,
     UserComponent,
     TopicsComponent,
-    TabComponent
+    TabComponent,
+    FormComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

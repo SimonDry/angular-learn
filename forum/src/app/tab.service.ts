@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TabService {
 
-  selected = 'users';
+  selected = 'topics';
 
   constructor() { }
 

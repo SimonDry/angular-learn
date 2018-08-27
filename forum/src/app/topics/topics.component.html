@@ -1,14 +1,33 @@
 <h3>Topic list</h3>
-<ul>
-  <li *ngFor="let t of service.allTopics">
-    <span (click)="toggleExtension(t)">{{t.title}}</span>
-    <span *ngIf="extendedTopic(t)">
-      <span *ngIf="t.content; else noContent">
-        <br>{{t.content}}
+<ul class="topics">
+  <li *ngFor="let topic of service.allTopics">
+
+    <h3 (click)="toggleExtension(topic)">
+      {{topic.title}}
+    </h3>
+
+    <ul class="comments" *ngIf="extendedTopic(topic)">
+      <span *ngIf="topic.comments; else noContent">
+        <li class="comment original">
+          {{topic.user.name}} says: <span *ngIf="topic.content; else noTopicContent">{{topic.content}}</span>
+        </li>
+        <span *ngFor="let comment of topic.comments">
+
+          <li class="comment" *ngIf="comment.user">
+            {{comment.user.name}} says: {{comment.content}}
+          </li>
+
+          <li class="comment" *ngIf="comment.anonymous">
+            Anonymous says: {{comment.content}}
+          </li>
+        </span>
 
       </span>
-    </span>
+    <button (click)="displayForm(topic.id)">Add comment</button>
+      <app-form *ngIf="formDisplayed(topic.id)" [topic]="topic"></app-form>
+    </ul>
   </li>
 </ul>
 
-<ng-template #noContent><br>Pas de contenu</ng-template>
+<ng-template #noContent><li><em>No content</em></li></ng-template>
+<ng-template #noTopicContent><em>No content</em></ng-template>

@@ -13,7 +13,6 @@ export class TopicsComponent implements OnInit {
   }
 
   extended: number=-1;
-
   ngOnInit() {
   }
 
@@ -22,11 +21,20 @@ export class TopicsComponent implements OnInit {
   }
 
   toggleExtension(topic: Topic) {
-    console.log(topic.id)
+    // console.log(topic.id)
     if (this.extended === topic.id) {
       this.extended = -1;
     } else {
       this.extended = topic.id
     }
+      this.formDisplay=-1;
   }
-}
+
+  formDisplay:number=-1;
+  displayForm(id){
+    this.formDisplay = id;
+  }
+  formDisplayed(id){
+    return this.formDisplay===id;
+  }
+  }

@@ -30,5 +30,5 @@
 </ul>
 <h5>Logged Users</h5>
 
-<div *ngFor="let u of service.loggedUsers"><span *ngIf="isLogged(u)">{{u}}</span></div>
+<div *ngIf="service.loggedUsers"><span *ngIf="isLogged(service.loggedUsers)">{{service.loggedUsers}}</span></div>
 

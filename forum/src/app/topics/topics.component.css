@@ -1,0 +1,21 @@
+.topics {
+  background:#aaaaaa;
+}
+.comments{
+  background: #eeeeee;
+}
+li {
+
+  list-style-type: none;
+}
+h3 {
+  cursor: pointer;
+}
+.comment {
+  border-bottom:1px solid #000000;
+  margin: 10px;
+  padding: 5px;
+}
+button {
+  cursor: pointer;
+}

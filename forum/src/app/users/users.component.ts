@@ -12,11 +12,11 @@ export class UsersComponent implements OnInit {
     this.service.fetchUsers();
   }
 
-  logUser(user){
-    this.service.loggedUsers.push(user)
+  logUser(username){
+    this.service.loggedUsers = username ;
   }
-  isLogged(user){
-    return this.service.loggedUsers.includes(user)
+  isLogged(username){
+    return this.service.loggedUsers;
   }
   ngOnInit() {
   }

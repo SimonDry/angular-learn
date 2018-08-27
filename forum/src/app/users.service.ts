@@ -13,7 +13,7 @@ export type User = {
 export class UsersService {
 
   constructor(public http:HttpClient) { }
-  loggedUsers:User[]=[];
+  loggedUsers:User=undefined;
   allUsers:User[]=[];
 
   fetchUsers() {

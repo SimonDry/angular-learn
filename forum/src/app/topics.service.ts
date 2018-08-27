@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "./users.service";
+
 export interface IComment {
   id: number;
   content: string;
@@ -9,14 +10,16 @@ export interface IComment {
   tags?: Array<String>;
   score?:number;
 }
+
 export type Topic ={
   id?: number,
-  title: string;
+  title: string,
   content: string,
   comments: Array<IComment>,
   user: User,
   tags?: Array<String>
 }
+
 export interface Admin extends User {
   statement: string;
 }
@@ -32,19 +35,14 @@ export class TopicsService{
   fetchTopics(){
     this.http.get<any[]>('http://localhost:8000/api/topics')
       .subscribe( (r:any[]) => {
-        this.allTopics = r.map( topic => this.mapAnyToTopics(topic))
+        this.allTopics = r
       })
   }
-  mapAnyToTopics(topic:any):Topic{
-    return {
-      id: topic.id,
-      title: topic.title,
-      content: topic.content,
-      comments: topic.comments,
-      user: topic.user,
-      tags:topic.tags
-    }
-}
+
+  postComment(id:number,comment){
+    comment=JSON.stringify(comment)
+    console.log(this.http.post('http://localhost:8000/api/comments/topic/'+id,comment))
+  }
 
 
 }
