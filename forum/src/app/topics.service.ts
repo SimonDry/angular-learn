@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "./users.service";
+import {Observable} from "rxjs";
 
 export interface IComment {
   id: number;
@@ -39,9 +40,9 @@ export class TopicsService{
       })
   }
 
-  postComment(id:number,comment){
-    comment=JSON.stringify(comment)
-    console.log(this.http.post('http://localhost:8000/api/comments/topic/'+id,comment))
+  postComment(id:number,comment:IComment){
+   // const commentJson=JSON.stringify(comment)
+    console.log(this.http.post('http://localhost:8000/api/comments/topic/'+id,comment).subscribe(res=>{console.log(res)},err=>{console.log(err)}))
   }
 
 

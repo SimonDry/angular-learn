@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from "../users.service";
+import {User, UsersService} from "../users.service";
 
 @Component({
   selector: 'app-users',
@@ -12,10 +12,10 @@ export class UsersComponent implements OnInit {
     this.service.fetchUsers();
   }
 
-  logUser(username){
-    this.service.loggedUsers = username ;
+  logUser(user:User){
+    this.service.loggedUsers = user ;
   }
-  isLogged(username){
+  isLogged(){
     return this.service.loggedUsers;
   }
   ngOnInit() {

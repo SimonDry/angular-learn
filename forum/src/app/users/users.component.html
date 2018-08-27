@@ -23,12 +23,12 @@
 <!--</table>-->
 <ul>
   <li *ngFor="let u of service.allUsers">
-    <user [user]="u" [admin]="u.admin" [name]="u.name" (click)="logUser(u.name)"></user>
+    <user [user]="u" [admin]="u.admin" [name]="u.name" (click)="logUser(u)"></user>
     <!--:-->
     <!--<span *ngIf="isLogged(u.name)">logged</span>-->
   </li>
 </ul>
 <h5>Logged Users</h5>
 
-<div *ngIf="service.loggedUsers"><span *ngIf="isLogged(service.loggedUsers)">{{service.loggedUsers}}</span></div>
+<div *ngIf="service.loggedUsers">{{service.loggedUsers.name}}</div>
 
